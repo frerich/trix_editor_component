@@ -1,16 +1,12 @@
 defmodule TrixEditor do
   use Phoenix.Component
 
-  @doc """
-  Hello world.
+  import Phoenix.Component, only: [live_component: 1]
 
-  ## Examples
-
-      iex> TrixEditorComponent.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def trix_editor(assigns) do
+    assigns
+    |> Map.put_new(:id, :trix_editor)
+    |> Map.put(:module, __MODULE__.Component)
+    |> live_component()
   end
 end
