@@ -8,17 +8,46 @@ defmodule TrixEditor do
   @external_resource css_path
   @trix_css File.read!(css_path)
 
+  attr(:field, Phoenix.HTML.FormField,
+    required: true,
+    doc: "A %Phoenix.HTML.Form{}/field name tuple, for example: {@form[:notes]}."
+  )
+
+  attr(:id, :string,
+    default: "trix_editor",
+    doc: """
+    The id to be used in the form, defaults to 'trix_editor'.
+    """
+  )
+
+  attr(:value, :string,
+    default: "",
+    doc: """
+    An initial value to display in the editor.
+    """
+  )
+
+  attr(:placeholder, :string,
+    default: "",
+    doc: """
+    An placeholder text to display in the editor.
+    """
+  )
+
+  attr(:rest, :global,
+    doc: """
+    Additional HTML attributes to add to the input element, ensuring proper escaping.
+    """
+  )
+
   def trix_editor(assigns) do
-    assigns =
-      assigns
-      |> assign_new(:id, :trix_editor)
-      |> assign(:trix_css, @trix_css)
+    assigns = assign(assigns, :trix_css, @trix_css)
 
     ~H"""
-    <div id={@id} phx-update="ignore">
+    <div id={@id} phx-update="ignore" {@rest}>
       <style><%= {:safe, @trix_css} %></style>
-      <%= hidden_input(@for, @field, id: "#{@id}_input") %>
-      <trix-editor input={"#{@id}_input"}></trix-editor>
+      <%= hidden_input(@field.form, @field.field, id: "#{@id}_input", value: @value) %>
+      <trix-editor placeholder={@placeholder} input={"#{@id}_input"}></trix-editor>
     </div>
     """
   end
