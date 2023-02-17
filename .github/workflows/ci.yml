@@ -14,17 +14,18 @@ jobs:
 
     env:
       MIX_ENV: test
+      ImageOS: ubuntu20
 
     strategy:
       matrix:
-        elixir: [1.12.3, 1.13.4]
-        otp: [24.1]
+        elixir: [1.12.3, 1.13.4, 1.14.3]
+        otp: [24.1, 25.2]
 
     steps:
     - uses: actions/checkout@v2
 
     - name: Set up Elixir
-      uses: erlef/setup-beam@988e02bfe678367a02564f65ca2e37726dc0268f
+      uses: erlef/setup-beam@v1
       with:
         elixir-version: ${{ matrix.elixir }}
         otp-version: ${{ matrix.otp }}
