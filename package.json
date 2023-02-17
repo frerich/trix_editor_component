@@ -1,0 +1,8 @@
+{
+  "name": "trix_editor_component",
+  "version": "0.1",
+  "main": "assets/node_modules/trix/dist/trix.umd.min.js",
+  "repository": {
+  },
+  "files": ["README.md", "package.json", "assets/node_modules/trix/dist/trix.umd.min.js"]
+}
