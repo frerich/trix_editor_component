@@ -1,4 +1,4 @@
-# TrixEditorComponent
+# TrixEditor
 
 **TODO: Add description**
 

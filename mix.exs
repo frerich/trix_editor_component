@@ -1,4 +1,4 @@
-defmodule TrixEditorComponent.MixProject do
+defmodule TrixEditor.MixProject do
   use Mix.Project
 
   def project do

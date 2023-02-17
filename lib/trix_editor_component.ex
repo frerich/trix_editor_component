@@ -1,7 +1,5 @@
-defmodule TrixEditorComponent do
-  @moduledoc """
-  Documentation for `TrixEditorComponent`.
-  """
+defmodule TrixEditor do
+  use Phoenix.Component
 
   @doc """
   Hello world.
