@@ -20,7 +20,8 @@ defmodule TrixEditor.MixProject do
 
   defp deps do
     [
-      {:phoenix_live_view, "~> 0.18.0"}
+      {:phoenix_live_view, "~> 0.18.0"},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
     ]
   end
 end
