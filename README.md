@@ -35,8 +35,8 @@ import "trix_editor_component"
 
 ## Credits
 
-This library was written by [Frerich Raabe](mailto:frerich.raabe@gmail.com), however it
-is really just standing on the shoulders of giants:
+This library was written by [Frerich Raabe](mailto:frerich.raabe@gmail.com),
+however it is really just standing on the shoulders of giants:
 
 * [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view) is what enables the interactivity
 * [Trix](https://trix-editor.org/) provides the frontend terminal component
